@@ -104,7 +104,7 @@ VALUES ('1', 'Raleigh Durham Airport', 'Raleigh', 'RDU');
 netstat -ano | findstr :8080
 ````
 ````shell
-taskkill //PID 6516 //F
+taskkill //PID 1904 //F
 ````
 
 ### Postman Curl's:
@@ -115,4 +115,16 @@ curl --location 'http://localhost:8080/nallani/1'
 
 ````shell
 curl --location 'http://localhost:8080/nallani'
+````
+````shell
+curl --location 'http://localhost:8080/nallani/ids' \
+--header 'Content-Type: application/json' \
+--data '{
+    "ids":[
+        "1",
+        "2",
+        "3",
+        "4"
+    ]
+}'
 ````

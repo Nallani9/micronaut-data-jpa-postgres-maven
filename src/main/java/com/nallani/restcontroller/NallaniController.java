@@ -3,8 +3,6 @@ package com.nallani.restcontroller;
 
 import com.nallani.model.OutputResponse;
 import com.nallani.service.NallaniServiceImpl;
-import com.nallani.model.NallaniEntity;
-import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Consumes;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
@@ -13,10 +11,8 @@ import io.micronaut.scheduling.TaskExecutors;
 import io.micronaut.scheduling.annotation.ExecuteOn;
 import jakarta.inject.Singleton;
 
-import java.util.Optional;
-
 @Singleton
-@ExecuteOn(TaskExecutors.BLOCKING)  // <1>
+@ExecuteOn(TaskExecutors.BLOCKING)
 @Controller("/nallani")
 public class NallaniController {
 
@@ -34,7 +30,7 @@ public class NallaniController {
         return nallaniService.find(id);
     }
 
-    @Get // <4>
+    @Get
     public String hello() {
         return "Hello!";
     }

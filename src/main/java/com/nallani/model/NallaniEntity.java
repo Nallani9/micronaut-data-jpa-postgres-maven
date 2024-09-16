@@ -1,7 +1,6 @@
 package com.nallani.model;
 
 import io.micronaut.serde.annotation.Serdeable;
-
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -17,8 +16,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class NallaniEntity {
 
     @Id
-    @GenericGenerator(name="gen",strategy="increment")
-    @GeneratedValue(generator="gen")
+    @GenericGenerator(name = "gen", strategy = "increment")
+    @GeneratedValue(generator = "gen")
     @Column(name = "id", unique = true, nullable = false)
     private String id;
 

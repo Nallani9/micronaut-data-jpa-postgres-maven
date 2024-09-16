@@ -16,7 +16,7 @@ public class NallaniServiceImpl {
 
     public OutputResponse find(String id) {
         System.out.printf("id", id);
-       Optional<NallaniEntity> entity = nallaniRepository.findById(id);
+        Optional<NallaniEntity> entity = nallaniRepository.findById(id);
 
         System.out.printf(entity.get().toString());
 
