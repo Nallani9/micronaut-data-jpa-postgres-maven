@@ -1,9 +1,11 @@
 package com.nallani.model;
 
 import io.micronaut.serde.annotation.Serdeable;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 
 @ToString
 @Serdeable
@@ -12,12 +14,10 @@ import org.hibernate.annotations.GenericGenerator;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "nallani")
+@Table(name = "nallani", schema = "public")
 public class NallaniEntity {
 
     @Id
-    @GenericGenerator(name = "gen", strategy = "increment")
-    @GeneratedValue(generator = "gen")
     @Column(name = "id", unique = true, nullable = false)
     private String id;
 

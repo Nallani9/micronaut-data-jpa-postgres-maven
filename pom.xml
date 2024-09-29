@@ -22,6 +22,7 @@
         <micronaut.runtime>netty</micronaut.runtime>
         <micronaut.test.resources.enabled>true</micronaut.test.resources.enabled>
         <exec.mainClass>com.nallani.Application</exec.mainClass>
+        <org.mapstruct.version>1.6.2</org.mapstruct.version>
     </properties>
 
     <repositories>
@@ -70,7 +71,6 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>io.micronaut.testresources</groupId>
@@ -81,6 +81,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
         </dependency>
         <dependency>
             <groupId>io.micronaut</groupId>
@@ -136,6 +141,11 @@
                             <version>${lombok.version}</version>
                         </path>
                         <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${org.mapstruct.version}</version>
+                        </path>
+                        <path>
                             <groupId>io.micronaut</groupId>
                             <artifactId>micronaut-inject-java</artifactId>
                             <version>${micronaut.core.version}</version>
@@ -183,6 +193,7 @@
                                 </exclusion>
                             </exclusions>
                         </path>
+
                     </annotationProcessorPaths>
                     <compilerArgs>
                         <arg>-Amicronaut.processing.group=com.nallani</arg>

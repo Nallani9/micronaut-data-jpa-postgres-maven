@@ -22,6 +22,19 @@
 
 # Docker Local:
 
+## Start Docker:
+```shell
+/c/Program\ Files/Docker/Docker/Docker\ Desktop.exe &
+```
+````powershell
+powershell.exe -Command "Start-Process 'C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe'"
+````
+## Start Docker:
+
+````powershell
+powershell.exe -Command "Get-Process -Name 'com.docker.backend' | Stop-Process -Force"
+````
+
 ## MY SQL:
 
 ```shell
@@ -72,7 +85,7 @@ http://localhost:5050/browser/
 
 ### SQL Strings:
 
-````shell
+````
 CREATE TABLE IF NOT EXISTS public.nallani
 (
     id character varying(255) COLLATE pg_catalog."default" NOT NULL,
@@ -89,11 +102,11 @@ ALTER TABLE IF EXISTS public.nallani
 
 ````
 
-```shell
+```
 SELECT id, name, city, code FROM public.nallani;
 ```
 
-```shell
+```
 INSERT INTO public.nallani(id, name, city, code)
 VALUES ('1', 'Raleigh Durham Airport', 'Raleigh', 'RDU');
 ```
@@ -104,7 +117,7 @@ VALUES ('1', 'Raleigh Durham Airport', 'Raleigh', 'RDU');
 netstat -ano | findstr :8080
 ````
 ````shell
-taskkill //PID 1904 //F
+taskkill //PID 21988 //F
 ````
 
 ### Postman Curl's:

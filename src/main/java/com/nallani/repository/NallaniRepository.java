@@ -10,5 +10,4 @@ import java.util.Optional;
 public interface NallaniRepository extends JpaRepository<NallaniEntity, String> {
 
     Optional<NallaniEntity> findById(String id);
-
 }
